@@ -19,7 +19,7 @@ function App() {
   const [results, setResults] = useState<QuestionData[]>([]);
 
   const handleSearch = () => {
-    const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
     const filtered = (data as QuestionData[]).filter((item) => {
       const questionMatch = item.question?.toLowerCase().includes(lowerQuery);
       const answerChoicesMatch = Object.values(item.choices || {}).some(
